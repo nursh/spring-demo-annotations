@@ -2,9 +2,11 @@ package com.nursh.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component // using default name of class
+@Scope("prototype")
 public class RunningCoach implements Coach {
 
 
