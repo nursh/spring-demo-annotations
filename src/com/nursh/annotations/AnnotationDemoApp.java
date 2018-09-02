@@ -11,6 +11,7 @@ public class AnnotationDemoApp {
         Coach football = context.getBean("footballCoach", Coach.class);
         System.out.println(federer.getDailyWorkout());
         System.out.println(federer.getFortune());
+        System.out.println(federer);
         System.out.println("-------------------------");
         System.out.println(runner.getDailyWorkout());
         System.out.println(runner.getFortune());
