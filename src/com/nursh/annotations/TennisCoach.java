@@ -1,9 +1,22 @@
 package com.nursh.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component("rogerFederer")
 public class TennisCoach implements Coach {
+
+    private FortuneService fortuneService;
+
+    public TennisCoach() {
+
+    }
+
+    // Using setter injection
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
+        this.fortuneService = fortuneService;
+    }
 
     @Override
     public String getDailyWorkout() {
@@ -12,6 +25,6 @@ public class TennisCoach implements Coach {
 
     @Override
     public String getFortune() {
-        return null;
+        return fortuneService.getFortune();
     }
 }
