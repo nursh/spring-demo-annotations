@@ -1,16 +1,18 @@
 package com.nursh.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component // using default name of class
 public class RunningCoach implements Coach {
 
+
     private FortuneService fortuneService;
 
     //Using constructor injection
     @Autowired
-    public RunningCoach(FortuneService fortuneService) {
+    public RunningCoach(@Qualifier("randomFortuneService")FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
