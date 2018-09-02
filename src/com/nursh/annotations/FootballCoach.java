@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
 public class FootballCoach implements Coach {
 
@@ -13,6 +16,16 @@ public class FootballCoach implements Coach {
 
     public FootballCoach() {
 
+    }
+
+    @PostConstruct
+    public void startUp() {
+        System.out.println("Starting and setting values up");
+    }
+
+    @PreDestroy
+    public void cleanUp() {
+        System.out.println("Doing clean up stuff for code");
     }
 
     @Override
