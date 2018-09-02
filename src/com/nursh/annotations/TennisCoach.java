@@ -9,4 +9,9 @@ public class TennisCoach implements Coach {
     public String getDailyWorkout() {
         return "practise backhand 50 times";
     }
+
+    @Override
+    public String getFortune() {
+        return null;
+    }
 }
